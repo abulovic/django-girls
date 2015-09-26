@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Django Blog</title>
+</head>
+
+<body>
+	<h1>Welcome to the Django Blog!</h1>
+
+	<form action="/create" method="POST"> {% csrf_token %}
+		<input type="text" name="title" placeholder="Your title here">
+		<textarea name="content" placeholder="Your text here"></textarea>
+		<button type="submit">Post</button>
+	</form>
+	
+	<ol>
+		<li>
+			<h2>Post #1</h2>
+			<h3>27.9.2015.</h3>
+			<p>This is a post no. 1, we have nothing to say here. Keep reading.</p>
+		</li>
+
+		<li>
+			<h2>Post #2</h2>
+			<h3>14.9.2015.</h3>
+			<p>This is the post where we explain the life, universe and everything.</p>
+		</li>
+	</ol>
+
+
+</body>
+
+</html>
