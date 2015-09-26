@@ -7,5 +7,6 @@ from .views import *
 ## URLS ##
 urlpatterns = [
     url(r'^$', homepage),
-    url(r'^create$', create)
+    url(r'^create$', create),
+    url(r'^delete$', delete),
 ]

@@ -5,7 +5,8 @@ from .models import Post
 
 
 def homepage(request):
-	return render(request, "homepage.html")
+	posts = Post.objects.all()
+	return render(request, "homepage.html", {'posts': posts})
 
 def create(request):
 	if request.method != "POST":
@@ -13,4 +14,8 @@ def create(request):
 	title = request.POST["title"]
 	content = request.POST["content"]
 	post = Post.objects.create(title=title, content=content)
+	return redirect('/')
+
+def delete(request):
+	Post.objects.all().delete()
 	return redirect('/')
